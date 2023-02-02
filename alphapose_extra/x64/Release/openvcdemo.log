@@ -1,0 +1,10 @@
+﻿  main.cpp
+C:\Program Files\opencv\build\include\opencv2\objdetect\aruco_board.hpp(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+C:\Users\hermi\source\repos\openvcdemo\openvcdemo\main.cpp(19,24): warning C4244: “初始化”: 从“double”转换到“long”，可能丢失数据
+C:\Users\hermi\source\repos\openvcdemo\openvcdemo\main.cpp(50,43): warning C4474: sprintf_s: 格式字符串中传递的参数太多
+C:\Users\hermi\source\repos\openvcdemo\openvcdemo\main.cpp(50,43): message : 占位符和其参数预计 0 可变参数，但提供的却是 1 参数
+  正在生成代码
+  Previous IPDB not found, fall back to full compilation.
+  All 505 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  已完成代码的生成
+  openvcdemo.vcxproj -> C:\Users\hermi\source\repos\openvcdemo\x64\Release\openvcdemo.exe
