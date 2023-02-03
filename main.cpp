@@ -9,41 +9,38 @@ using namespace cv;
 
 int main()
 {
-	// string VideoName;
-	// int FrameInterval;
-	// std::cout << "Please type the name of the video.";
-	// cin >> VideoName;
-    string VideoName="demo.mp4";
-	VideoCapture cap(".\\Video\\"+VideoName);
-	// std::cout << "Please type How many frames are fetched every frame." << endl;
-	// cin >> FrameInterval;
-	// long totalFrameNumber = cap.get(CAP_PROP_FRAME_COUNT);
-	// std::cout << "total frames: " << totalFrameNumber << endl;
-	
-	// Mat frame;
-	// bool flags = true;
-	// long currentFrame = 0;
-	// while (flags) 
-	// {
-		
-	// 	cap.read(frame);
+	string VideoName;
+	int FrameInterval;
+	std::cout << "Please type the name of the video.";
+	cin >> VideoName;
 
-	// 	stringstream str;
-	// 	str << "raw" << currentFrame << ".jpg";
-	// 	std::cout << "Processing the No." << currentFrame << "֡ frame" << endl;
-	// 	printf("\n");
-	// 	imwrite(".\\Frame.\\" + str.str(), frame);
-	// 	if (currentFrame >= totalFrameNumber-1) {
-	// 		flags = false;
-	// 	}
-	// 	currentFrame++;
+	VideoCapture cap(".\\Video\\"+VideoName);
+	long totalFrameNumber = cap.get(CAP_PROP_FRAME_COUNT);
+	std::cout << "total frames: " << totalFrameNumber << endl;
+	
+	Mat frame;
+	bool flags = true;
+	long currentFrame = 0;
+	while (flags) 
+	{
 		
-	// }
-	// //char cmd[]="python process.py "+string(totalFrameNumber-1);
-	// string cmd = "python process.py " + to_string(totalFrameNumber-1);
-	// system(cmd.data());
-    long long  totalFrameNumber = 1400;   
-    Mat frame = imread(".\\ResultFrame\\1.png");
+		cap.read(frame);
+
+		stringstream str;
+		str << "raw" << currentFrame << ".jpg";
+		std::cout << "Processing the No." << currentFrame << "֡ frame" << endl;
+		printf("\n");
+		imwrite(".\\Frame.\\" + str.str(), frame);
+		if (currentFrame >= totalFrameNumber-1) {
+			flags = false;
+		}
+		currentFrame++;
+		
+	}
+	//char cmd[]="python process.py "+string(totalFrameNumber-1);
+	string cmd = "python process.py " + to_string(totalFrameNumber-1);
+	system(cmd.data());
+    Mat framex = imread(".\\ResultFrame\\1.png");
     Size size = Size(cap.get(cv::CAP_PROP_FRAME_WIDTH), cap.get(cv::CAP_PROP_FRAME_HEIGHT));
     int fps=cap.get(cv::CAP_PROP_FPS);
 	VideoWriter writer;
